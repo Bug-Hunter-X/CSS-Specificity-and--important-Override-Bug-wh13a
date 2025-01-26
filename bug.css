@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to specificity and inheritance:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red !important;
+}
+
+.parent .child {
+  color: green;
+}
+```
+
+In this example, the `.child` class has the `!important` flag, which overrides the color set by its parent. However, the more specific selector `.parent .child` is used to override the `!important` flag. This behaviour might be unexpected for developers unfamiliar with the specificity rules that consider the number of selectors in a CSS rule.
